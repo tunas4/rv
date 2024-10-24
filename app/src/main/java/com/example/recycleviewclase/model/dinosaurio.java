@@ -1,16 +1,19 @@
 package com.example.recycleviewclase.model;
 
-import android.graphics.Color;
+import android.content.Intent;
+
+
 
 public class dinosaurio
 {
     private String nombre;
     private String tipo;
     private String descripcion;
-    private Color color;
+    private int color;
     private int imagen;
 
-    public dinosaurio(String nombre, String tipo, String descripcion, Color color, int imagen) {
+    public dinosaurio(String nombre, String tipo, String descripcion, int color, int imagen)
+    {
         this.nombre = nombre;
         this.tipo = tipo;
         this.descripcion = descripcion;
@@ -18,43 +21,53 @@ public class dinosaurio
         this.imagen = imagen;
     }
 
-    public String getNombre() {
+    public String getNombre()
+    {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(String nombre)
+    {
         this.nombre = nombre;
     }
 
-    public String getTipo() {
+    public String getTipo()
+    {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(String tipo)
+    {
         this.tipo = tipo;
     }
 
-    public String getDescripcion() {
+    public String getDescripcion()
+    {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
+    public void setDescripcion(String descripcion)
+    {
         this.descripcion = descripcion;
     }
 
-    public String getColor() {
+    public int getColor()
+    {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(int color)
+    {
         this.color = color;
     }
 
-    public int getImagen() {
+    public int getImagen()
+    {
         return imagen;
     }
 
-    public void setImagen(int imagen) {
+    public void setImagen(int imagen)
+    {
         this.imagen = imagen;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.recycleviewclase.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.recycleviewclase.Detalles;
 import com.example.recycleviewclase.R;
 import com.example.recycleviewclase.model.dinosaurio;
 
@@ -40,7 +42,20 @@ public class DinosaurioAdapter extends RecyclerView.Adapter<DinosaurioAdapter.Di
     public void onBindViewHolder(@NonNull DinosaurioAdapter.DinosaurioViewHolder holder, int position)
     {
         holder.setData(dinosauriosLista.get(position));
+        holder.imagendino.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(v.getContext(), Detalles.class);
+                intent.putExtra("nombre", dinosauriosLista.get(position).getNombre());
+                intent.putExtra("descripcion", dinosauriosLista.get(position).getDescripcion());
+                intent.putExtra("imagen", dinosauriosLista.get(position).getImagen());
+                v.getContext().startActivity(intent);
+            }
+        });
     }
+
 
     @Override
     public int getItemCount()
@@ -72,7 +87,7 @@ public class DinosaurioAdapter extends RecyclerView.Adapter<DinosaurioAdapter.Di
             txttipo.setText(dinosaurio.getTipo());
             txtdescripcion.setText(dinosaurio.getDescripcion());
             imagendino.setImageResource(dinosaurio.getImagen());
-            bgdino.setBackgroundResource(R.color.black);
+            bgdino.setBackgroundColor(dinosaurio.getColor());
         }
     }
 }
